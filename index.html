@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Masai School</title>
+    <style type="text/css">
+      button {
+        width: 64px;
+        height: 64px;
+        background-color: chocolate;
+        color: white;
+        font-size: 32px;
+        margin: 10px;
+      }
+
+      .keys_row {
+        text-align: center;
+        background-color: black;
+      }
+
+      #keys_output {
+        background-color: wheat;
+        margin: 20px;
+        font-size: 48px;
+        text-align: center;
+      }
+      #caps_btnn {
+        background-color: coral;
+      }
+      #clear_btn {
+        background-color: coral;
+      }
+      #space {
+        background-color: coral;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="keys_output">Enter here</div>
+    <div class="keys_row">
+      <button onclick="button_clicked('Q')">Q</button>
+      <button onclick="button_clicked('W')">W</button>
+      <button onclick="button_clicked('E')">E</button>
+      <button onclick="button_clicked('R')">R</button>
+      <button onclick="button_clicked('T')">T</button>
+      <button onclick="button_clicked('Y')">Y</button>
+      <button onclick="button_clicked('U')">U</button>
+      <button onclick="button_clicked('I')">I</button>
+      <button onclick="button_clicked('O')">O</button>
+      <button onclick="button_clicked('P')">P</button>
+    </div>
+    <div class="keys_row">
+      <button onclick="button_clicked('A')">A</button>
+      <button onclick="button_clicked('S')">S</button>
+      <button onclick="button_clicked('D')">D</button>
+      <button onclick="button_clicked('F')">F</button>
+      <button onclick="button_clicked('G')">G</button>
+      <button onclick="button_clicked('H')">H</button>
+      <button onclick="button_clicked('J')">J</button>
+      <button onclick="button_clicked('K')">K</button>
+      <button onclick="button_clicked('L')">L</button>
+    </div>
+    <div class="keys_row">
+      <button onclick="button_clicked('Z')">Z</button>
+      <button onclick="button_clicked('X')">X</button>
+      <button onclick="button_clicked('C')">C</button>
+      <button onclick="button_clicked('V')">V</button>
+      <button onclick="button_clicked('B')">B</button>
+      <button onclick="button_clicked('N')">N</button>
+      <button onclick="button_clicked('M')">M</button>
+    </div>
+    <div class="keys_row">
+      <button
+        onclick="caps_click()"
+        id="caps_btnn"
+        style="width: 100px; height: 50px"
+      >
+        caps
+      </button>
+
+      <button
+        onclick="clear_click()"
+        id="clear_btn"
+        style="width: 100px; height: 50px"
+      >
+        clear
+      </button>
+
+      <button
+        onclick="space_click()"
+        id="space"
+        style="width: 100px; height: 50px"
+      >
+        space
+      </button>
+    </div>
+
+    <script>
+      var output = document.getElementById("keys_output");
+      var outputText = "";
+      var caps_btn = false;
+
+      function button_clicked(character) {
+        if (caps_btn) {
+          outputText = outputText + character.toUpperCase();
+        } else {
+          var lower_char = character.toLowerCase();
+          outputText = outputText + lower_char;
+        }
+
+        output.textContent = outputText;
+      }
+
+      function clear_click() {
+        outputText = "Enter here";
+        output.textContent = outputText;
+        outputText = "";
+      }
+
+      function space_click() {
+        outputText = outputText + " " + "";
+        output.textContent = outputText;
+      }
+
+      function caps_click() {
+        var caps_btnn = document.getElementById("caps_btnn");
+        if (caps_btn) {
+          caps_btnn.textContent = "small";
+          caps_btn = false;
+        } else {
+          caps_btnn.textContent = "CAPS";
+          caps_btn = true;
+        }
+      }
+    </script>
+  </body>
+</html>
