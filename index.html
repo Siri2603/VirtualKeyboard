@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Masai School</title>
+    <title>virtual keyboard</title>
     <style type="text/css">
       button {
         width: 64px;
@@ -74,7 +74,7 @@
         id="caps_btnn"
         style="width: 100px; height: 50px"
       >
-        caps
+        CAPS
       </button>
 
       <button
@@ -82,7 +82,7 @@
         id="clear_btn"
         style="width: 100px; height: 50px"
       >
-        clear
+        Clear
       </button>
 
       <button
@@ -90,14 +90,14 @@
         id="space"
         style="width: 100px; height: 50px"
       >
-        space
+        Space
       </button>
     </div>
 
     <script>
       var output = document.getElementById("keys_output");
       var outputText = "";
-      var caps_btn = false;
+      var caps_btn = true;
 
       function button_clicked(character) {
         if (caps_btn) {
